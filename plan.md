@@ -41,11 +41,23 @@ Step by Step Plan:
    - Set up Server, Routes, Controller, Model, CORS
 
 2. Set up Angular Frontend
+
    - Created Event component
      - Import Service
      - getEventList from service
-     - stored data in local state/variable
+     - store data in local state/variable
+     - display event data in HTML via data interpolation
+     - using forms with data binding
    - Created Event service
-     - Imported HttpClient
+     - Import HttpClient
      - getEventList - GET /events to API
    - Created Event interface
+
+Wednesday, July 12th:
+
+- Make an HTML form to create a new event
+  - createEvent method in event service, accepts a body (POST)
+  - use data binding to store form data
+- Make an HTML form to filter/search for events based on name
+  - searchEvent method in event service, accepts a URL parameter (GET)
+  - use data binding to store form data

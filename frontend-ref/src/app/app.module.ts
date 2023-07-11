@@ -4,21 +4,19 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventComponent } from './event/event.component';
+import { EventService } from './event.service'
 
 @NgModule({
-  // Use for components
   declarations: [
     AppComponent,
     EventComponent
   ],
-  // Use for angular libraries
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  // Use for services
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,9 @@
 <p>event works!</p>
 
+<!-- Iterate over our eventList array and display the following properties -->
 <div *ngFor="let event of eventList">
   <p>{{ event.name }}</p>
+  <p>{{ event.host }}</p>
+  <p>{{ event.date }}</p>
+  <p>{{ event.location }}</p>
 </div>

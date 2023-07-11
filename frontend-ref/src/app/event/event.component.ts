@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// Import Service
 import { EventService } from '../event.service'
 
 @Component({
@@ -9,21 +8,20 @@ import { EventService } from '../event.service'
 })
 export class EventComponent implements OnInit {
 
-  constructor(private _eventService: EventService) { }
-  // Initialize local variable/state
   eventList: any = []
 
+  constructor(private _eventService: EventService) { }
+
   ngOnInit(): void {
+    // LifeCycle Method On Component Initialization
     this.getEventList()
   }
 
-  //Call getEventList
-
+  // getEventList
   getEventList() {
     this._eventService.getEventList().subscribe(responseData => {
-      // Store data locally
       this.eventList = responseData
-      console.log("This is the API data: ", responseData)
+      console.log('Response from Express API:', responseData)
     })
   }
 
