@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventComponent } from './event/event.component';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   // Use for components
@@ -15,7 +16,8 @@ import { EventComponent } from './event/event.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   // Use for services
   providers: [],

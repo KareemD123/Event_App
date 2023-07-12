@@ -1,9 +1,60 @@
-<p>event works!</p>
+<h1>Event List</h1>
+
+<!-- Create a form and bind the data to a variable in our event component -->
+
+<form (ngSubmit)="searchEvent()">
+  <label for="name">Name:</label>
+  <input
+    type="text"
+    [(ngModel)]="searchParam"
+    id="name-input"
+    name="name"
+    autocomplete="off"
+  />
+  <button type="submit">Search Events</button>
+</form>
+
+<button (click)="ngOnInit()">Clear Search</button>
 
 <!-- Iterate over our eventList array and display the following properties -->
-<div *ngFor="let event of eventList">
-  <p>{{ event.name }}</p>
-  <p>{{ event.host }}</p>
-  <p>{{ event.date }}</p>
-  <p>{{ event.location }}</p>
+<div class="event-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Event Name</th>
+        <th>Host</th>
+        <th>Date</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of eventList">
+        <td>{{ event.name }}</td>
+        <td>{{ event.host }}</td>
+        <td>{{ event.date }}</td>
+        <td>{{ event.location }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
+<form id="create-form" (ngSubmit)="createEvent()">
+  <label for="name">Name:</label>
+  <input type="text" [(ngModel)]="event.name" name="name" autocomplete="off" />
+
+  <label for="host">Host:</label>
+  <input type="text" [(ngModel)]="event.host" name="host" autocomplete="off" />
+
+  <label for="date">Date:</label>
+  <input type="date" [(ngModel)]="event.date" name="date" autocomplete="off" />
+
+  <label for="location">Location:</label>
+  <input
+    type="text"
+    [(ngModel)]="event.location"
+    name="location"
+    autocomplete="off"
+  />
+  <br />
+  <button type="submit">Create Event!</button>
+</form>
